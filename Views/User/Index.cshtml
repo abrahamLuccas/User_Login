@@ -42,7 +42,7 @@
                         }
                         catch
                         {
-                            <img class="img-fluid" src="http://www.puspfc.usp.br/sistemas/prefeitura/imgs/sem_foto.png" width="70" />
+                            <img class="img-fluid" src="http://www.puspfc.usp.br/sistemas/prefeitura/imgs/sem_foto.png" width="100" />
                         }
                     }
                 </td>
@@ -56,8 +56,8 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td class="text-center">
-                    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id"> Change</a>
-                    <a class="btn btn-outline-secodnary btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id"> Edit</a>
+                    <a class="btn btn-outline-secondary btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
                     <a class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id"> Delete</a>
                 </td>
             </tr>

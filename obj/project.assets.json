@@ -1866,11 +1866,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abrah\\Desktop\\PerfilUsuario\\UserProfile.csproj",
+      "projectUniqueName": "C:\\Users\\abrah\\Desktop\\UserProfile\\UserProfile.csproj",
       "projectName": "UserProfile",
-      "projectPath": "C:\\Users\\abrah\\Desktop\\PerfilUsuario\\UserProfile.csproj",
+      "projectPath": "C:\\Users\\abrah\\Desktop\\UserProfile\\UserProfile.csproj",
       "packagesPath": "C:\\Users\\abrah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abrah\\Desktop\\PerfilUsuario\\obj\\",
+      "outputPath": "C:\\Users\\abrah\\Desktop\\UserProfile\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

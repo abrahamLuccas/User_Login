@@ -1,0 +1,39 @@
+﻿@model UserProfile.Models.User
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Change user informations</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for-id="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Login" class="control-label"></label>
+                <input asp-for="Login" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input type="Password" name="Password" id="Password" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Picture" class="control-label">Change Picture</label>
+                <input  type="file" name="Img" id="Img" class="form-control"/>
+                <span asp-validation-for="Picture" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-top:15px">
+                <input type="submit" value="Change" class="btn btn-primary btn-sm" />
+                <a class="btn btn-secondary text-white btn-sm" asp-action="Index">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

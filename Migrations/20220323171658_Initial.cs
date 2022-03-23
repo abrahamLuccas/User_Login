@@ -17,7 +17,7 @@ namespace UserProfile.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Picture = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     Login = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Keyword = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

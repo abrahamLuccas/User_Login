@@ -9,9 +9,12 @@ namespace UserProfile.Models
         public byte[]? Picture { get; set; }
        
         [Required]
-        [MinLength(5), MaxLength(20)]
+        [StringLength(20)]
         public string Login { get; set; }
-        public string Keyword { get; set; }
+
+        [Required]        
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
         
         [Display(Name = "Email Address")]
         [Required(ErrorMessage = "Email is required.")]

@@ -1,0 +1,55 @@
+﻿@model UserProfile.Models.User
+@{
+    ViewData["Title"] = "Details";
+}
+<h1>User Details</h1>
+<hr />
+<div class="row">
+    <div><div class="row">
+    <div class="col-md-4">
+        <form asp-action="Details" class="text-danger">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" readonly/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Login" class="control-label"></label>
+                <input asp-for="Login" class="form-control" readonly/>
+                <span asp-validation-for="Login" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input type="Password" name="Password" id="Password" class="form-control" readonly/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" readonly/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-top:15px">
+                        @{
+                            try
+                            {
+                                var base64 = Convert.ToBase64String(Model.Picture);
+                                if(!string.IsNullOrEmpty(base64))
+                                {
+                                    var Img = String.Format("data:image/png;base64,{0}", base64);
+                                    <img class="img-fluid" src="@Img" width="300" />
+                                }
+                            }
+                            catch
+                            {
+                                <img class="img-fluid" src="http://www.puspfc.usp.br/sistemas/prefeitura/imgs/sem_foto.png" width="150" style="margin-top:15px"/>
+                            }
+                        }
+            </div>
+            <div class="form-group" style="margin-top:15px">
+                <a class="btn btn-secondary text-white btn-sm" asp-action="Index">Back</a>
+            </div>
+        </form>
+    </div>
+</div></div>
+</div>
