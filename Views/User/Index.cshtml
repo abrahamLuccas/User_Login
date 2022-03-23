@@ -1,0 +1,66 @@
+﻿@model IEnumerable<UserProfile.Models.User>
+@{
+    ViewData["Title"] = "Index";
+}
+<p>
+    <a class="btn btn-outline-primary" asp-action="Create" >
+        Add new user
+    </a>
+</p>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th class="text-center"> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="align-middle">
+                 <td>
+                    @{
+                        try
+                        {
+                            var base64 = Convert.ToBase64String(@item.Picture);
+                            if(!string.IsNullOrEmpty(base64))
+                            {
+                                var img = String.Format("data:image/png;base64,{0}", base64);
+                                <img class="img-fluid" src="@img" width="100" />
+                            }
+                        }
+                        catch
+                        {
+                            <img class="img-fluid" src="http://www.puspfc.usp.br/sistemas/prefeitura/imgs/sem_foto.png" width="70" />
+                        }
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Login)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td class="text-center">
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id"> Change</a>
+                    <a class="btn btn-outline-secodnary btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id"> Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
